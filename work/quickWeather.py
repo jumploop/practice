@@ -8,7 +8,7 @@ if len(sys.argv) < 2:
     sys.exit()
 location = ' '.join(sys.argv[1:])
 # Download the JSON data from OpenWeatherMap.org's API.
-url = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=%s&cnt=3' % (location)
+url = 'http:k//api.openweathermap.org/data/2.5/forecast/daily?q=%s&cnt=3' % (location)
 response = requests.get(url)
 response.raise_for_status()
 # Load JSON data into a Python variable
