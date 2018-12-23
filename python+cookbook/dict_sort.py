@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import json
 import time
 from collections import OrderedDict
 
@@ -13,4 +14,6 @@ d['grok'] = 4
 for key in d:
     # time.sleep(1)
     print(key, d[key],flush=True)
-#
+ret=json.dumps(d)
+print(ret)
+print(json.loads(ret))
