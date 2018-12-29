@@ -23,7 +23,7 @@ def sendmail(f_from, f_to, f_cclist, content_info, f_subject):
 
     server = smtplib.SMTP("smtp.qq.com")
     server.set_debuglevel(1)
-    server.login("982698078@qq.com", "dopjuyedwcjjbfjc")
+    server.login("982698078@qq.com", "password")
 
     # 构造MIMEMultipart对象做为根容器
     main_msg = MIMEMultipart()
