@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # filename：send_mail.py
+
 import smtplib
 from email.header import Header
 from email.mime.multipart import MIMEMultipart
