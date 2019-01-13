@@ -50,7 +50,7 @@ t.start()
 countdown(1000000)
 t.stop()
 print(t.elapsed)
-
+print(t.running)
 # Use 2: As a context manager
 with t:
     countdown(1000000)
