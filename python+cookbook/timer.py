@@ -45,7 +45,7 @@ def countdown(n):
 
 
 # Use 1: Explicit start/stop
-t = Timer()
+t = Timer(time.process_time)
 t.start()
 countdown(1000000)
 t.stop()
