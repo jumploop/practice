@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 from wxpy import *
 
+bot = Bot(cache_path=True)
 # linux执行登陆请调用下面的这句
 bot = Bot(console_qr=2, cache_path="botoo.pkl")
 headers = {
@@ -69,10 +70,10 @@ if __name__ == '__main__':
     dic = getWeather(101110101)
     msg = strDic(dic)
     receivers = ['婺愇囉茻', '一叶知秋', '开心公举 คิดถึง']
-    threads=[]
-    num=len(threads)
+    threads = []
+    num = len(threads)
     for friend in receivers:
-        t=threading.Thread(target=sendWeatherMsg,args=(friend,msg))
+        t = threading.Thread(target=sendWeatherMsg, args=(friend, msg))
         threads.append(t)
     for i in range(num):
         threads[i].start()
