@@ -1,7 +1,8 @@
 #! python3
 # readCensusExcel.py - Tabulates population and number of census tracts for
 # each county.
-import openpyxl, pprint
+import openpyxl
+import pprint
 
 print('Opening workbook...')
 wb = openpyxl.load_workbook('censuspopdata.xlsx')
@@ -12,8 +13,11 @@ print('Reading rows...')
 for row in range(2, sheet.max_row + 1):
     # Each row in the spreadsheet has data for one census tract.
     state = sheet['B' + str(row)].value
+    print(state)
     county = sheet['C' + str(row)].value
+    print(county)
     pop = sheet['D' + str(row)].value
+    print(pop)
     # Open a new text file and write the contents of countyData to it.
     countyData.setdefault(state, {})
     # Make sure the key for this county in this state exists.
