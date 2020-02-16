@@ -41,7 +41,7 @@ class PoJie():
 
         profile = pywifi.Profile()  # 创建wifi链接文件
         # profile.ssid = "888888"
-        profile.ssid='TP-LINK_5819'# wifi名称
+        profile.ssid = 'TP-LINK_252B'  # wifi名称
         profile.auth = const.AUTH_ALG_OPEN  # 网卡的开放，
         profile.akm.append(const.AKM_TYPE_WPA2PSK)  # wifi加密算法
         profile.cipher = const.CIPHER_TYPE_CCMP  # 加密单元
@@ -67,6 +67,7 @@ class PoJie():
         self.file.close()
 
 
-path = r"C:\Users\liming\Desktop\program\good_script\6000常用密码字典.txt"
-start = PoJie(path)
-start.readPassWord()
+if __name__ == '__main__':
+    path = r"C:\Users\liming\Desktop\program\good_script\6000常用密码字典.txt"
+    start = PoJie(path)
+    start.readPassWord()
